@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Humanizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background-color: #f0f0f0;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .output {
+            white-space: pre-wrap;
+            background: #fff;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            margin-top: 1rem;
+        }
+        button {
+            padding: 0.6rem 1.2rem;
+            font-size: 1rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Humanize Your Article</h1>
+    <form method="POST">
+        <textarea name="input_text" placeholder="Paste your academic or business article here...">{{ request.form.get('input_text', '') }}</textarea>
+        <br>
+        <button type="submit">Humanize It</button>
+    </form>
+
+    {% if output %}
+        <h2>Humanized Output:</h2>
+        <div class="output">{{ output }}</div>
+    {% endif %}
+</body>
+</html>
