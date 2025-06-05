@@ -26,13 +26,13 @@
         button {
             padding: 0.6rem 1.2rem;
             font-size: 1rem;
-            background: #007bff;
+            background:rgb(143, 11, 6);
             color: white;
             border: none;
             cursor: pointer;
         }
         button:hover {
-            background: #0056b3;
+            background:rgb(179, 57, 0);
         }
     </style>
 </head>
@@ -46,7 +46,9 @@
 
     {% if output %}
         <h2>Humanized Output:</h2>
-        <div class="output">{{ output }}</div>
+        <div class="output">
+            <pre> {{ output }} </pre>
+        </div>
     {% endif %}
 </body>
 </html>
