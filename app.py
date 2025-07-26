@@ -8,8 +8,11 @@ load_dotenv()
 import requests
 
 app = Flask(__name__)
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
-PING_URL = "https://your-app-name.onrender.com/"
+nlp = spacy.load("en_core_web_sm")
+
+PING_URL = "https://progress-humanizer.onrender.com"
 
 def keep_alive():
     try:
